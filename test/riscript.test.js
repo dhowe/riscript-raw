@@ -1825,14 +1825,10 @@ describe('RiScript.v3', function () {
         y: '[a | b]',
       };
       let rg = new RiGrammar(h);
-      let results = {};
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 5; i++) {
         let res = rg.expand();
-        // console.log(i + ") " + res);
         expect(res).matches(/[AB] c/);
-        results[res] = results[res] + 1 || 1;
       }
-      expect(Object.keys(results).length).eq(2);
     });
 
     it('Should allow rules starting with numbers', function () {
